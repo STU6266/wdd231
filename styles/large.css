@@ -1,15 +1,56 @@
 @media screen and (min-width: 600px) {
-  .menu-toggle { display: none; }
-  .menu { display: flex!important; flex-direction: row; }
-  .menu a { border: none; border-left: 1px solid #fff; }
-  .menu a:first-child { border-left: none; }
-  header { justify-content: flex-start; }
-  header img, header .name { margin: 0; }
-  .cards-container { flex-direction: row; }
-  .card { width: calc(50% - 0.5rem); }
-  .courses-grid { grid-template-columns: repeat(3, 1fr); }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .menu a {
+    border: none;
+    border-left: 1px solid #fff;
+  }
+
+  .menu a:first-child {
+    border-left: none;
+  }
+
+  header img,
+  header .name {
+    margin: 0;
+  }
+
+  .cards-container {
+    flex-direction: row;
+  }
+
+  .card {
+    width: calc(50% - 0.5rem);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
 @media screen and (min-width: 900px) {
-  html { font-size: 112.5%; }
-  header, main { padding: 2rem 4rem; }
+  html {
+    font-size: 112.5%;
+  }
+
+
 }
