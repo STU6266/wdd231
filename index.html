@@ -1,85 +1,89 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>WDD 231 – Web Frontend Development 1 - Steven Kemendics</title>
-    <meta name="description" content="WDD 231 / Homepage"/>
-    <meta name="author" content="Steven Kemendics"/>
-    
-    <link rel="stylesheet" href="styles/base.css"/>
-   
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-      
-    <script src="scripts/getdates.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 – Web Frontend Development 1 – Steven Kemendics</title>
+    <meta name="description" content="WDD 231 Course Home Page – Steven Kemendics" />
+    <meta name="author" content="Steven Kemendics" />
+
+    <!-- CSS: normalize + small + large (with media query) -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JavaScript (deferred) -->
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="js/date.js"></script>
+    <script defer src="js/course.js"></script>
   </head>
+
   <body>
-    
     <header>
-      <h1>WDD 131: Dynamic Web Fundamentals - Steven Kemendics</h1>
+      <figure>
+        <img src="images/profile.png" alt="Portrait of Steven Kemendics" width="120" height="120" />
+      </figure>
+      <span class="name">Steven Kemendics</span>
       <nav>
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/steven-kemendics">LinkedIn</a>
-          </li>
-          <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-          <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a></li>
-          <li><a href="final_project">Final Project</a></li>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="chamber.html">Chamber</a></li>
+          <li><a href="final.html">Final</a></li>
+          <li><a href="https://stu6266.github.io/wdd231" target="_blank" rel="noopener">GitHub Profile</a></li>
+          <li><a href="https://www.linkedin.com/in/steven-kemendics" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-      <!-- Card 1: Über mich und Austria -->
-      <section class="card1">
-        <h2>About Me</h2>
-        <div class="content-group left-image">
-          <figure>
-            <img src="images/profil.png" alt="Profil Pic"/>
-          </figure>
-          <p>
-            My name is Steven Kemendics. I am from Vienna, Austria, I am married
-            and have 3 Children. I am a Warehouse Manager but want to become a
-            Software Developer so that I can give my Family a better life and feel
-            better about my self. Sports is huge in my life and I am a big American
-            Football fan.
-          </p>
-        </div>
-        <h2>Austria</h2>
-        <div class="content-group right-image">
-          <figure>
-            <img src="images/austria.jpg" alt="Austria Flag"/>
-          </figure>
-          <p>
-            Austria, a landlocked country in Central Europe, is known for its stunning
-            Alpine scenery and rich cultural heritage. Its capital, Vienna, is famed
-            for its classical music history and magnificent architecture. Austria is a
-            member of the European Union and has a high standard of living. The country
-            boasts a strong economy, driven by tourism, manufacturing, and services.
-          </p>
-        </div>
-      </section>
+      <h1>Home</h1>
 
-      <!-- Card 2: Web Dev Resources -->
-      <section class="card2">
-        <h2>Web Dev Resources</h2>
-        <ul>
-          <li><a href="https://dev.to/">Dev.to Community</a></li>
-          <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
-          <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
-          <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
-          <li><a href="https://www.udemy.com">Udemy</a></li>
-          <li>Image Placeholder</li>
-        </ul>
+      <div class="cards-container">
+        <!-- Course Work Card -->
+        <section class="card" id="course-work">
+          <h2>Course Work</h2>
+          <ul>
+            <li>WDD 130 – Web Development Foundations</li>
+            <li>WDD 131 – HTML &amp; CSS</li>
+            <li>WDD 231 – JavaScript Essentials</li>
+          </ul>
+        </section>
+
+        <!-- Vienna, Austria Card -->
+        <section class="card" id="vienna">
+          <h2>Vienna, Austria</h2>
+          <figure>
+            <img src="images/vienna.jpg" alt="Vienna skyline" width="300" height="200" />
+            <figcaption>Vienna at sunset</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <!-- Certificate Section -->
+      <section id="certificate">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="filter-buttons">
+          <button id="filter-all">All</button>
+          <button id="filter-cse">CSE</button>
+          <button id="filter-wdd">WDD</button>
+        </div>
+        <div class="courses-grid">
+          <!-- Course cards will be injected here by course.js -->
+        </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-      <p>&copy; <span id="currentyear"></span> Steven Kemendics. Austria</p>
+      <p>&copy; <span id="currentYear"></span> Steven Kemendics, Austria</p>
       <p id="lastModified"></p>
     </footer>
   </body>

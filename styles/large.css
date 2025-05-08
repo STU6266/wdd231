@@ -1,0 +1,23 @@
+@media screen and (min-width: 900px) {
+    html {
+      font-size: 112.5%; /* 1rem = 18px */
+    }
+  
+    .menu {
+      display: flex !important; /* immer sichtbar, auch wenn .open fehlt */
+      flex-direction: row;
+    }
+    .menu-toggle {
+      display: none;
+    }
+  
+    .cards-container {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  
+    .card {
+      width: calc(50% - 0.5rem);
+    }
+  }
+  
