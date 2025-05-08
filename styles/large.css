@@ -1,23 +1,15 @@
+@media screen and (min-width: 600px) {
+  .menu-toggle { display: none; }
+  .menu { display: flex!important; flex-direction: row; }
+  .menu a { border: none; border-left: 1px solid #fff; }
+  .menu a:first-child { border-left: none; }
+  header { justify-content: flex-start; }
+  header img, header .name { margin: 0; }
+  .cards-container { flex-direction: row; }
+  .card { width: calc(50% - 0.5rem); }
+  .courses-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media screen and (min-width: 900px) {
-    html {
-      font-size: 112.5%; /* 1rem = 18px */
-    }
-  
-    .menu {
-      display: flex !important; /* immer sichtbar, auch wenn .open fehlt */
-      flex-direction: row;
-    }
-    .menu-toggle {
-      display: none;
-    }
-  
-    .cards-container {
-      flex-direction: row;
-      gap: 1rem;
-    }
-  
-    .card {
-      width: calc(50% - 0.5rem);
-    }
-  }
-  
+  html { font-size: 112.5%; }
+  header, main { padding: 2rem 4rem; }
+}

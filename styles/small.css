@@ -1,4 +1,3 @@
-/* 1. Basis-Reset */
 *,
 *::before,
 *::after {
@@ -6,162 +5,155 @@
   margin: 0;
   padding: 0;
 }
-
-/* 2. Grund-Typografie */
 html {
   font-family: 'Roboto', sans-serif;
-  font-size: 100%; /* 16px */
+  font-size: 100%;
   line-height: 1.5;
   scroll-behavior: smooth;
 }
-
 body {
-  color: #333;
   background: #f5f5f5;
-  min-height: 100vh;
+  color: #333;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
-
-/* 3. Header */
 header {
-  background: #004466;
-  color: #fff;
-  padding: 1rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-header figure {
-  margin-right: 1rem;
-}
-
-header img {
-  border-radius: 50%;
-  display: block;
-}
-
-header .name {
-  font-family: 'Funnel Display', sans-serif;
-  font-size: 1.5rem;
-}
-
-/* 4. Navigation (mobile) */
-nav {
-  width: 100%;
-  position: relative;
-  margin-top: 0.5rem;
-}
-
-.menu-toggle {
-  background: #022233;
-  color: #fff;
-  border: none;
+  background: #1A5276;
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
 }
-
+header figure {
+  margin: 0;
+}
+header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+header .name {
+  flex: 1;
+  text-align: center;
+  font-family: 'Funnel Display', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+}
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: #fff;
+  cursor: pointer;
+}
 .menu {
   list-style: none;
   display: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  width: 100%;
+  background: #000;
+}
+.menu.open {
+  display: flex;
   flex-direction: column;
 }
-
 .menu li + li {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #333;
 }
-
 .menu a {
   display: block;
   padding: 0.75rem 1rem;
-  text-decoration: none;
+  text-align: center;
   color: #fff;
-  background: #022233;
+  text-decoration: none;
 }
-
-/* 5. Main-Content */
+.menu a[aria-current="page"] {
+  color: #F4D03F;
+}
 main {
   flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 1rem;
 }
-
 .cards-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
-
 .card {
   background: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 1rem;
 }
-
 .card h2 {
-  margin-bottom: 0.5rem;
   font-family: 'Funnel Display', sans-serif;
+  margin-bottom: 0.5rem;
 }
-
-/* Bild in Card */
-.card figure {
-  margin: 0 0 0.5rem 0;
-}
-
 .card img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 0.25rem;
 }
-
-/* Certificate Section */
-#certificate {
-  margin-top: 2rem;
-}
-
 #certificate h2 {
   background: #004466;
   color: #fff;
+  text-align: center;
   padding: 0.75rem;
   border-radius: 0.5rem 0.5rem 0 0;
-  text-align: center;
 }
-
 .filter-buttons {
   display: flex;
   gap: 0.5rem;
-  margin: 1rem 0;
   justify-content: center;
+  margin: 1rem 0;
 }
-
 .filter-buttons button {
   flex: 1;
   padding: 0.5rem;
-  border: none;
-  border-radius: 0.25rem;
   background: #022233;
   color: #fff;
+  border: none;
+  border-radius: 0.25rem;
   cursor: pointer;
 }
-
+.total-credits {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
 .courses-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
 }
-
-/* 6. Footer */
+.course-card {
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.course-card.completed {
+  background: #7A4113;
+  color: #fff;
+}
+.course-card h3 {
+  margin-bottom: 0.5rem;
+  font-family: 'Funnel Display', sans-serif;
+}
 footer {
   background: #004466;
   color: #fff;
   text-align: center;
   padding: 1rem;
 }
-
 footer p {
   margin: 0.25rem 0;
   font-size: 0.9rem;

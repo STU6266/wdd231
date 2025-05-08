@@ -7,12 +7,11 @@
     <meta name="description" content="WDD 231 Course Home Page – Steven Kemendics" />
     <meta name="author" content="Steven Kemendics" />
 
-    <!-- CSS: normalize + small + large  -->
-    <link rel="stylesheet" href="css/normalize.css" />
+   
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 600px)">
 
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,16 +19,16 @@
       rel="stylesheet"
     />
 
-    <!-- JavaScript (deferred) -->
+    
     <script defer src="scripts/navigation.js"></script>
-    <script defer src="js/date.js"></script>
-    <script defer src="js/course.js"></script>
+    <script defer src="scripts/date.js"></script>
+    <script defer src="scripts/course.js"></script>
   </head>
 
   <body>
     <header>
       <figure>
-        <img src="images/profile.png" alt="Portrait of Steven Kemendics" width="120" height="120" />
+        <img src="images/profil.png" alt="Portrait of Steven Kemendics" width="120" height="120" />
       </figure>
       <span class="name">Steven Kemendics</span>
       <nav>
@@ -48,27 +47,30 @@
       <h1>Home</h1>
 
       <div class="cards-container">
-        <!-- Course Work Card -->
+      
         <section class="card" id="course-work">
           <h2>Course Work</h2>
           <ul>
-            <li>WDD 130 – Web Development Foundations</li>
-            <li>WDD 131 – HTML &amp; CSS</li>
-            <li>WDD 231 – JavaScript Essentials</li>
+            <li>CSEPC 110 – Indroduction to Programming</li>
+            <li>CSE 111  – Programming with Functions</li>
+            <li>WDD 130 – Web Fundamentals</li>
+            <li>CSE 210 – Programming with Classes</li>
+            <li>WDD 131 – Dynamic Web Fundamentals</li>
+            <li>WDD 230 – Web Frontend Development I</li>
           </ul>
         </section>
 
-        <!-- Vienna, Austria Card -->
+      
         <section class="card" id="vienna">
           <h2>Vienna, Austria</h2>
           <figure>
-            <img src="images/vienna.jpg" alt="Vienna skyline" width="300" height="200" />
+            <img src="images/dom.webp" alt="Vienna skyline" width="300" height="200" />
             <figcaption>Vienna at sunset</figcaption>
           </figure>
         </section>
       </div>
 
-      <!-- Certificate Section -->
+    
       <section id="certificate">
         <h2>Web and Computer Programming Certificate</h2>
         <div class="filter-buttons">
@@ -76,9 +78,12 @@
           <button id="filter-cse">CSE</button>
           <button id="filter-wdd">WDD</button>
         </div>
-        <div class="courses-grid">
-          <!-- Course cards will be injected here by course.js -->
-        </div>
+        
+       
+        <p id="totalCredits" class="total-credits">Total Credits: 0</p>
+      
+    
+        <div class="courses-grid"></div>
       </section>
     </main>
 
