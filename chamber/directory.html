@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 – Web Frontend Development 1 – Steven Kemendics</title>
+    <meta name="description" content="WDD 231 Course Home Page – Steven Kemendics">
+    <meta name="author" content="Steven Kemendics">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width:600px)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,400;1,100;1,400&display=swap">
+    
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/date.js"></script>
+    <script defer src="scripts/members.js"></script>
+    <script defer src="scripts/directory.js"></script>
+    
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <meta property="og:title" content="FaceBook">
+    <meta property="og:description" content="FaceBook is a social media platform that allows users to connect with friends and family, share content, and discover new interests.">
+    <meta property="og:url" content="https://www.facebook.com">
+    <meta property="og:image" content="images/facebook.png">
+
+</head>
+<body>
+   <main>
+        <div class="view-toggle" style="text-align:center; margin:1rem 0;">
++           <button id="listViewBtn" aria-pressed="true">List View</button>
++           <button id="gridViewBtn" aria-pressed="false">Grid View</button>
++       </div>
+        <section id="members" class="members-grid">
+            
+        </section>
+
+        <div class="info-box weather">
+        <img src="/images/weather-icon.svg" alt="weather Icon">
+        <h2>Weather</h2>
+        <ul>
+          <li><strong>Temperature:</strong> <span id="tempValue">12</span>&deg;C</li>
+          <li><strong>Conditions:</strong> Cloudy</li>
+          <li><strong>Wind:</strong> <span id="windValue">10</span> km/h</li>
+          <li><strong>Wind Chill:</strong> <span id="chillValue"></span>&deg;C</li>
+        </ul>
+      </div>
+
+   </main> 
+   <footer>
+        <p>&copy; <span id="currentyear"></span> Steven Kemendics. Austria</p>
+    <p id="lastModified"></p>
+   </footer>
+    
+</body>
+</html>
