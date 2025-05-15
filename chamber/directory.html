@@ -1,61 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 – Web Frontend Development 1 – Steven Kemendics</title>
-    <meta name="description" content="WDD 231 Course Home Page – Steven Kemendics">
-    <meta name="author" content="Steven Kemendics">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Grund-Meta -->
+  <title>Business Directory – My Chamber Site</title>
+  <meta name="description" content="Entdecken Sie lokale Unternehmen im Verzeichnis Ihrer Chamber of Commerce. Grid- oder Listenansicht." />
+  <meta name="author" content="Dein Name" />
 
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width:600px)">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,400;1,100;1,400&display=swap">
-    
-    <script defer src="scripts/navigation.js"></script>
-    <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/members.js"></script>
-    <script defer src="scripts/directory.js"></script>
-    
+  <!-- Facebook Open Graph Meta -->
+  <meta property="og:title" content="Business Directory – My Chamber Site" />
+  <meta property="og:description" content="Entdecken Sie lokale Unternehmen im Verzeichnis Ihrer Chamber of Commerce." />
+  <meta property="og:image" content="https://deine-domain.tld/assets/social-preview.png" />
+  <meta property="og:url" content="https://deine-domain.tld/directory.html" />
+  <meta property="og:type" content="website" />
 
-    <link rel="icon" href="images/favicon.ico">
+  <!-- CSS Reset / Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-oHDEc8Xed2H5n6J1pLrOQzazx+e1B4oc0nStbDzDA+fHzOaIuHRfoT5fH7u0PkNF0zW4/dLkB8ZHY2v1E6fyHg==" crossorigin="anonymous" />
 
-    <meta property="og:title" content="FaceBook">
-    <meta property="og:description" content="FaceBook is a social media platform that allows users to connect with friends and family, share content, and discover new interests.">
-    <meta property="og:url" content="https://www.facebook.com">
-    <meta property="og:image" content="images/facebook.png">
-
+  <!-- eigenes CSS -->
+  <link rel="stylesheet" href="styles/large.css" />
 </head>
 <body>
-   <main>
-        <div class="view-toggle" style="text-align:center; margin:1rem 0;">
-+           <button id="listViewBtn" aria-pressed="true">List View</button>
-+           <button id="gridViewBtn" aria-pressed="false">Grid View</button>
-+       </div>
-        <section id="members" class="members-grid">
-            
-        </section>
+  <header class="site-header">
+    <h1>My Chamber of Commerce</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="info-box weather">
-        <img src="/images/weather-icon.svg" alt="weather Icon">
-        <h2>Weather</h2>
-        <ul>
-          <li><strong>Temperature:</strong> <span id="tempValue">12</span>&deg;C</li>
-          <li><strong>Conditions:</strong> Cloudy</li>
-          <li><strong>Wind:</strong> <span id="windValue">10</span> km/h</li>
-          <li><strong>Wind Chill:</strong> <span id="chillValue"></span>&deg;C</li>
-        </ul>
+  <main>
+    <section class="directory-controls">
+      <h2>Business Directory</h2>
+      <div class="view-toggle">
+        <button id="grid-btn" aria-pressed="true">🔲</button>
+        <button id="list-btn" aria-pressed="false">☰</button>
       </div>
+    </section>
 
-   </main> 
-   <footer>
-        <p>&copy; <span id="currentyear"></span> Steven Kemendics. Austria</p>
+    <section id="directory" class="grid-view">
+      <!-- hier füllt directory.js die Cards oder Listeneinträge -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> Steven Kemendics – Austria</p>
     <p id="lastModified"></p>
-   </footer>
-    
+    <p>Contact: info@deine-domain.tld</p>
+  </footer>
+
+  <script src="scripts/directory.js" defer></script>
 </body>
 </html>

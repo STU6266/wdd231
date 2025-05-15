@@ -1,72 +1,90 @@
-const yearEl     = document.getElementById('currentYear');
-const modifiedEl = document.getElementById('lastModified');
+document.addEventListener('DOMContentLoaded', async () => {
+  // === Footer: aktuelles Jahr + letztes Änderungsdatum ===
+  const yearEl     = document.getElementById('currentYear');
+  const modifiedEl = document.getElementById('lastModified');
+  yearEl.textContent     = new Date().getFullYear();
+  modifiedEl.textContent = `Letzte Änderung: ${new Date(document.lastModified).toLocaleDateString('de-DE')}`;
 
-yearEl.textContent     = new Date().getFullYear();
-modifiedEl.textContent = `Last Update: ${document.lastModified}`;
+  // === View-Buttons & Container ===
+  const gridBtn    = document.getElementById('grid-btn');
+  const listBtn    = document.getElementById('list-btn');
+  const directoryEl = document.getElementById('directory');
+  const dataUrl    = 'data/members.json';
 
-
-
-
-const url = "data/members.json";
-const membersContainer = document.querySelector("#members");
-
-// 1) Asynchrone Funktion definieren
-async function loadMembers() {
+  // === 1) Daten laden ===
+  let members = [];
   try {
-    // 2) Daten holen
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`HTTP-Fehler: ${response.status}`);
-    const data = await response.json();
-
-    // 3) Daten verarbeiten und ins DOM einfügen
-    data.forEach(member => {
-      // Karte erstellen
-      const card = document.createElement("div");
-      card.classList.add("member-card");
-
-      // Inneres der Karte aufbauen (HTML-Template)
-      card.innerHTML = `
-        <img src="images/${member.imageFileName}" alt="${member.name}" class="member-img">
-        <h2 class="member-name">${member.name}</h2>
-        <p class="member-address">${member.address}</p>
-        <p class="member-phone">☎️ ${member.phone}</p>
-        <p class="member-website">
-          🌐 <a href="${member.website}" target="_blank">${member.website}</a>
-        </p>
-      `;
-
-      // Karte anhängen
-      membersContainer.appendChild(card);
-    });
+    const resp = await fetch(dataUrl);
+    if (!resp.ok) throw new Error(`HTTP-Fehler: ${resp.status}`);
+    members = await resp.json();
   } catch (err) {
-    console.error("Fehler beim Laden der Member:", err);
-    membersContainer.innerHTML = "<p>Sorry, die Member-Daten konnten nicht geladen werden.</p>";
+    console.error('Fehler beim Laden der Member-Daten:', err);
+    directoryEl.innerHTML = '<p>Fehler beim Laden der Verzeichnis-Daten.</p>';
+    return;
   }
-}
 
-// 4) Funktion nach dem Laden der Seite aufrufen
-document.addEventListener("DOMContentLoaded", loadMembers);
+  // === 2) Render-Funktionen ===
+  function renderGrid() {
+    directoryEl.innerHTML = '';
+    directoryEl.classList.remove('list-view');
+    directoryEl.classList.add('grid-view');
 
+    members.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="images/${m.imageFileName}" alt="${m.name} Logo">
+        <h3>${m.name}</h3>
+        <p>${m.address}</p>
+        <p>${m.phone}</p>
+        <p><a href="${m.website}" target="_blank">
+          ${m.website.replace(/^https?:\/\//, '')}
+        </a></p>
+      `;
+      directoryEl.appendChild(card);
+    });
+  }
 
+  function renderList() {
+    directoryEl.innerHTML = '';
+    directoryEl.classList.remove('grid-view');
+    directoryEl.classList.add('list-view');
 
-const btn  = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-btn.addEventListener('click', () => menu.classList.toggle('open'));
+    members.forEach((m, i) => {
+      const row = document.createElement('div');
+      row.className = 'list-item';
+      // Zebra-Striping
+      if (i % 2 === 1) row.style.backgroundColor = 'var(--zebra-bg)';
 
-// ——— view toggle for #members ———
-const membersEl = document.getElementById('members');
-const listBtn    = document.getElementById('listViewBtn');
-const gridBtn    = document.getElementById('gridViewBtn');
+      row.innerHTML = `
+        <div>${m.name}</div>
+        <div>${m.address}</div>
+        <div>${m.phone}</div>
+        <div><a href="${m.website}" target="_blank">
+          ${m.website.replace(/^https?:\/\//, '')}
+        </a></div>
+      `;
+      directoryEl.appendChild(row);
+    });
+  }
 
-function setView(view) {
-  // swap the classes
-  membersEl.classList.remove('members-grid','members-list');
-  membersEl.classList.add(view === 'grid' ? 'members-grid' : 'members-list');
+  // === 3) View-Toggle-Handler ===
+  gridBtn.addEventListener('click', () => {
+    if (gridBtn.getAttribute('aria-pressed') === 'false') {
+      gridBtn.setAttribute('aria-pressed', 'true');
+      listBtn.setAttribute('aria-pressed', 'false');
+      renderGrid();
+    }
+  });
 
-  // update aria-pressed
-  listBtn .setAttribute('aria-pressed', view === 'list');
-  gridBtn .setAttribute('aria-pressed', view === 'grid');
-}
+  listBtn.addEventListener('click', () => {
+    if (listBtn.getAttribute('aria-pressed') === 'false') {
+      listBtn.setAttribute('aria-pressed', 'true');
+      gridBtn.setAttribute('aria-pressed', 'false');
+      renderList();
+    }
+  });
 
-listBtn.addEventListener('click', () => setView('list'));
-gridBtn.addEventListener('click', () => setView('grid'));
+  // === 4) Initiale Ansicht ===
+  renderGrid();
+});
