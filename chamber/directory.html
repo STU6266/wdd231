@@ -1,34 +1,24 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Grund-Meta -->
-  <title>Business Directory – My Chamber Site</title>
-  <meta name="description" content="Entdecken Sie lokale Unternehmen im Verzeichnis Ihrer Chamber of Commerce. Grid- oder Listenansicht." />
-  <meta name="author" content="Dein Name" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- Facebook Open Graph Meta -->
-  <meta property="og:title" content="Business Directory – My Chamber Site" />
-  <meta property="og:description" content="Entdecken Sie lokale Unternehmen im Verzeichnis Ihrer Chamber of Commerce." />
-  <meta property="og:image" content="https://www.apple.com/ac/structured-data/images/open_graph_logo.png?202110180743" />
-  <meta property="og:url"   content="https://www.apple.com/" />
- 
-
-  <!-- CSS Reset / Normalize -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-oHDEc8Xed2H5n6J1pLrOQzazx+e1B4oc0nStbDzDA+fHzOaIuHRfoT5fH7u0PkNF0zW4/dLkB8ZHY2v1E6fyHg==" crossorigin="anonymous" />
-
-  <!-- eigenes CSS -->
-  <link rel="stylesheet" href="styles/large.css" />
+  <title>Business Directory – My Chamber of Commerce</title>
+  <meta name="description" content="Discover local businesses in the directory of your Chamber of Commerce. Grid or list view.">
+  <meta name="author" content="Steven Kemendics">
+  <link rel="icon" href="favicon.png">
+  <meta property="og:title" content="Business Directory – My Chamber of Commerce">
+  <meta property="og:description" content="Discover local businesses in the directory of your Chamber of Commerce.">
+  <meta property="og:image" content="assets/social-preview.png">
+  <meta property="og:url" content="directory.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="styles/large.css">
 </head>
 <body>
   <header class="site-header">
-    <h1>My Chamber of Commerce</h1>
+    <div class="site-title">My Chamber of Commerce</div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -38,26 +28,20 @@
       </ul>
     </nav>
   </header>
-
   <main>
+    <h1>Business Directory – My Chamber of Commerce</h1>
     <section class="directory-controls">
-      <h1>Business Directory – My Chamber Site</h1>
       <div class="view-toggle">
-        <button id="grid-btn" aria-pressed="true">🔲</button>
-        <button id="list-btn" aria-pressed="false">☰</button>
+        <button id="grid-btn" aria-pressed="true">Grid</button>
+        <button id="list-btn" aria-pressed="false">List</button>
       </div>
     </section>
-
-    <section id="directory" class="grid-view">
-      <!-- hier füllt directory.js die Cards oder Listeneinträge -->
-    </section>
+    <section id="directory" class="grid-view"></section>
   </main>
-
   <footer class="site-footer">
-    <p>&copy; <span id="currentYear"></span> Steven Kemendics – Austria</p>
+    <p>&copy; <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified"></p>
   </footer>
-
   <script src="scripts/directory.js" defer></script>
 </body>
 </html>

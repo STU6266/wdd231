@@ -1,11 +1,7 @@
-/* =========================================
-   Improved Large.css for Chamber Directory
-   ========================================= */
-
-/* --- Global Reset & Box-Sizing --- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: #1a73e8;
   --secondary-color: #f2f9fa;
@@ -19,33 +15,32 @@
   --transition: 0.2s ease-in-out;
 }
 
-/* --- Typography & Body --- */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: var(--text-color);
   background: var(--secondary-color);
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
+
 a {
   color: var(--primary-color);
   text-decoration: none;
   transition: color var(--transition);
 }
+
 a:hover {
   color: var(--accent-color);
   text-decoration: underline;
 }
 
-/* --- Layout Containers --- */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--gap);
 }
 
-/* --- Header & Navigation --- */
 .site-header {
   display: flex;
   align-items: center;
@@ -54,10 +49,12 @@ main {
   color: #fff;
   padding: var(--gap) calc(var(--gap) * 1.5);
 }
+
 .site-header .site-title {
   font-size: 1.75rem;
   font-weight: bold;
 }
+
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -65,6 +62,7 @@ main {
   margin: 0;
   padding: 0;
 }
+
 .main-nav a {
   padding: 0.5rem;
   border-radius: var(--radius);
@@ -72,18 +70,17 @@ main {
   color: #fff;
   transition: background var(--transition);
 }
+
 .main-nav a:hover,
 .main-nav .active {
   background: rgba(255,255,255,0.2);
 }
 
-/* --- Section Titles --- */
 .directory-controls h1 {
   font-size: 2rem;
   margin: 0;
 }
 
-/* --- View Toggle Controls --- */
 .directory-controls {
   display: flex;
   justify-content: space-between;
@@ -92,6 +89,7 @@ main {
   border-bottom: 2px solid var(--card-shadow);
   margin-bottom: var(--gap);
 }
+
 .view-toggle button {
   background: white;
   border: 2px solid var(--primary-color);
@@ -102,19 +100,21 @@ main {
   cursor: pointer;
   transition: background var(--transition), color var(--transition), transform var(--transition);
 }
+
 .view-toggle button[aria-pressed="true"] {
   background: var(--primary-color);
   color: white;
 }
+
 .view-toggle button:hover {
   transform: translateY(-2px);
 }
 
-/* --- Grid View --- */
 .grid-view {
   display: grid;
   gap: var(--gap);
 }
+
 .grid-view .card {
   background: var(--background-color);
   padding: var(--gap);
@@ -123,22 +123,24 @@ main {
   text-align: center;
   transition: box-shadow var(--transition), transform var(--transition);
 }
+
 .grid-view .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 8px var(--card-shadow);
 }
+
 .grid-view .card img {
   max-width: 80%;
   height: auto;
   margin-bottom: var(--gap);
 }
 
-/* --- List View --- */
 .list-view {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
+
 .list-view .list-item {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
@@ -150,14 +152,15 @@ main {
   box-shadow: 0 1px 3px var(--card-shadow);
   transition: background var(--transition);
 }
+
 .list-view .list-item:nth-child(even) {
   background: var(--zebra-bg);
 }
+
 .list-view .list-item:hover {
   background: var(--background-color);
 }
 
-/* --- Footer --- */
 .site-footer {
   background: var(--primary-color);
   color: #fff;
@@ -165,17 +168,18 @@ main {
   padding: var(--gap) calc(var(--gap) * 2);
   margin-top: var(--gap);
 }
+
 .site-footer p {
   margin: 0.25rem 0;
   font-size: 0.875rem;
 }
 
-/* --- Responsive Breakpoints --- */
 @media (min-width: 600px) {
   .grid-view {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
+
 @media (max-width: 400px) {
   .directory-controls {
     flex-direction: column;
