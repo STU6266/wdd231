@@ -4,7 +4,7 @@
     "address": "Lange Gasse 12, 1080 Wien, Österreich",
     "phone": "+43-1-2345678",
     "website": "https://www.wienertechwerke.at",
-    "imageFileName": "wienertechwerke.jpg",
+    "imageFileName": "wienerTechwerke.jpg",
     "membershipLevel": 3
   },
   {
@@ -28,7 +28,7 @@
     "address": "Maria-Theresien-Straße 25, 6020 Innsbruck, Österreich",
     "phone": "+43-512-345678",
     "website": "https://www.innsbruck-innovations.at",
-    "imageFileName": "innsbruckinnovations.jpg",
+    "imageFileName": "innsbruck.jpg",
     "membershipLevel": 1
   },
   {
@@ -36,7 +36,7 @@
     "address": "Herrengasse 13, 8010 Graz, Österreich",
     "phone": "+43-316-987654",
     "website": "https://www.grazgruene.at",
-    "imageFileName": "grazgruenenergie.jpg",
+    "imageFileName": "graz.jpg",
     "membershipLevel": 3
   },
   {
@@ -44,7 +44,7 @@
     "address": "Stadtplatz 1, 9020 Klagenfurt, Österreich",
     "phone": "+43-463-112233",
     "website": "https://www.klagenfurt-kreativ.at",
-    "imageFileName": "klagenfurtstudio.jpg",
+    "imageFileName": "klagenfurt.jpg",
     "membershipLevel": 1
   },
   {
@@ -52,7 +52,7 @@
     "address": "Seestraße 7, 6900 Bregenz, Österreich",
     "phone": "+43-5574-223344",
     "website": "https://www.bregenzerbau.at",
-    "imageFileName": "bregenzerbau.jpg",
+    "imageFileName": "bregenz.jpg",
     "membershipLevel": 3
   }
 ]

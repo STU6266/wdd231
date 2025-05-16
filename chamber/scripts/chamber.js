@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = `
-        <img src="images/${m.imageFileName}" alt="${m.name} logo">
-        <h3>${m.name}</h3>
+        <img src="images/${m.imageFileName}" alt="${m.name} logo" class="member-img">
+        <h2>${m.name}</h2>
         <p>${m.address}</p>
         <p>${m.phone}</p>
         <p><a href="${m.website}" target="_blank">${m.website.replace(/^https?:\/\//, '')}</a></p>

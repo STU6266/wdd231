@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Directory – My Chamber of Commerce</title>
   <meta name="description" content="Discover local businesses in the directory of your Chamber of Commerce. Grid or list view.">
   <meta name="author" content="Steven Kemendics">
-
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html,body{width:100%;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    main>h1{font-size:2rem;margin:1rem 0}
-    .site-footer{min-height:4rem}
-  </style>
-
-  <link rel="preload" href="styles/large.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles/large.css"></noscript>
-  <link rel="preload" href="data/members.json" as="fetch" crossorigin="anonymous">
+  <link rel="icon" href="favicon.png">
+  <meta property="og:title" content="Business Directory – My Chamber of Commerce">
+  <meta property="og:description" content="Discover local businesses in the directory of your Chamber of Commerce.">
+  <meta property="og:image" content="assets/social-preview.png">
+  <meta property="og:url" content="directory.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="styles/large.css">
 </head>
 <body>
   <header class="site-header">
@@ -30,7 +28,6 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <h1>Business Directory – My Chamber of Commerce</h1>
     <section class="directory-controls">
@@ -41,12 +38,10 @@
     </section>
     <section id="directory" class="grid-view"></section>
   </main>
-
   <footer class="site-footer">
-    <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
+    <p>&copy; <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified"></p>
   </footer>
-
   <script src="scripts/chamber.js" defer></script>
 </body>
 </html>
