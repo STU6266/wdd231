@@ -116,6 +116,16 @@ main {
   transform: translateY(-2px);
 }
 
+.member-img {
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
 .grid-view {
   display: grid;
   gap: var(--gap);
@@ -130,6 +140,7 @@ main {
   padding: var(--gap);
   text-align: center;
   transition: box-shadow var(--transition), transform var(--transition);
+  min-height: 320px;
 }
 
 .grid-view .card:hover {
@@ -174,9 +185,12 @@ main {
   background: var(--primary-color);
   color: black;
   text-align: center;
-  padding: var(--gap) 0;
+  padding: 1rem 0;
   margin-top: var(--gap);
   min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .site-footer p {
