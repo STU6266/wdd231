@@ -1,3 +1,7 @@
+import { loadEvents }        from './events.mjs';
+import { loadCurrentWeather } from './weather.mjs';
+import { loadForecast }      from './3dayWeather.mjs';
+
 document.addEventListener('DOMContentLoaded', async () => {
   const yearEl = document.getElementById('currentYear');
   const modifiedEl = document.getElementById('lastModified');
@@ -72,5 +76,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
+  const btn  = document.getElementById('join-btn');
+  const modal = document.getElementById('join-modal');
+  const close = document.getElementById('close-btn');
+
+  btn.addEventListener('click', () => modal.style.display = 'block');
+  close.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
   renderGrid();
+
+  loadEvents();
+  loadCurrentWeather();
+  loadForecast();
 });

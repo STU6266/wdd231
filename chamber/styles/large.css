@@ -85,6 +85,44 @@ main > h1 {
 .main-nav .active {
   border-bottom-color: #ffffff;
 }
+.hero {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color var(--transition);
+}
+.btn-primary:hover {
+  background-color: #e65c00;
+}
 
 .directory-controls {
   display: flex;

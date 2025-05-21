@@ -21,7 +21,7 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="site-title">My Chamber of Commerce</div>
+    <h1>Vienna - Austria Chamber of Commerce</h1>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -30,24 +30,47 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+ 
   </header>
-
+ 
   <main>
-    <h1>Business Directory – My Chamber of Commerce</h1>
-    <section class="directory-controls">
-      <div class="view-toggle">
-        <button id="grid-btn" aria-pressed="true">Grid</button>
-        <button id="list-btn" aria-pressed="false">List</button>
+  <div class="hero">
+    <img src="images/wien.jpg"
+         alt="A beautiful view of Vienna, Austria"
+         loading="lazy">
+   <div class="hero-content">
+     <h2>Become a Member!</h2>
+     <a href="join.html" class="btn btn-primary">join</a>
+   </div>
+  </div>
+    
+  <section class="home-content">
+    <section class="card events">
+      <h2>Events</h2>
+      <ul id="events-list">
+      </ul>
+    </section>
+
+    <section class="card weather current-weather">
+      <h2>current-weather</h2>
+      <div id="current-weather">
+        <p>Lade aktuelles Wetter…</p>
       </div>
     </section>
-    <section id="directory" class="grid-view"></section>
-  </main>
+
+    <section class="card weather forecast">
+      <h2>weather forrcast</h2>
+      <ul id="forecast-list">
+        <li>Lade Vorhersage…</li>
+      </ul>
+    </section>
+  </section>
 
   <footer class="site-footer">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
   </footer>
 
-  <script src="scripts/chamber.js" defer></script>
+  <script type="module" src="scripts/chamber.js"></script>
 </body>
 </html>
