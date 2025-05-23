@@ -21,7 +21,7 @@ export async function loadEvents() {
     });
   } catch (err) {
   
-    ul.innerHTML = '<li>Fehler beim Laden der Events.</li>';
+    ul.innerHTML = '<li>Mistake while Loarding.</li>';
     console.error('loadEvents error:', err);
   }
 }

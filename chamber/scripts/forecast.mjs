@@ -1,7 +1,7 @@
-// js/forecast.mjs
+
 const apiKey = '5140e54ec933ab3ca6ae2fe9a7227eaa';
-const lat    = 48.2082;     // your latitude
-const lon    = 16.3738;     // your longitude
+const lat    = 48.2082;     
+const lon    = 16.3738;     
 const units  = 'metric';
 const lang   = 'en';
 
@@ -16,7 +16,6 @@ export async function loadForecast() {
     if (!res.ok) throw new Error(res.statusText);
     const data = await res.json();
 
-    // Group first reading per calendar date
     const todayKey = new Date().toLocaleDateString(lang);
     const tempsByDate = {};
     data.list.forEach(item => {
@@ -27,12 +26,12 @@ export async function loadForecast() {
       }
     });
 
-    // Pick the next 3 days (skip today)
+
     const futureDates = Object.keys(tempsByDate)
       .filter(d => d !== todayKey)
       .slice(0, 3);
 
-    // Render
+  
     forecastEl.innerHTML = futureDates.map(dateStr => {
       const d = new Date(dateStr);
       const weekday = d.toLocaleDateString(lang, { weekday: 'long' });

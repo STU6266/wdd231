@@ -1,4 +1,4 @@
-// scripts/chamber.js
+
 
 import { loadEvents }           from './events.mjs';
 import { loadCurrentWeather }   from './weather.mjs';
@@ -6,19 +6,18 @@ import { loadForecast }         from './forecast.mjs';
 import { loadSpotlights }       from './members.mjs';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // 1) Home-Widgets
+
   loadEvents();
   loadCurrentWeather();
   loadForecast();
   loadSpotlights();
 
-  // 2) Jahr & „Last Modified“
+ 
   const yearEl     = document.getElementById('currentYear');
   const modifiedEl = document.getElementById('lastModified');
   if (yearEl)     yearEl.textContent     = new Date().getFullYear();
   if (modifiedEl) modifiedEl.textContent = `Last Modified: ${new Date(document.lastModified).toLocaleDateString()}`;
 
-  // 3) Directory: Daten laden
   const directoryEl = document.getElementById('directory');
   let membersData = [];
   try {
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // 4) Render-Funktionen
   function renderGrid() {
     if (!directoryEl) return;
     directoryEl.classList.add('grid');
@@ -59,16 +57,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     `).join('');
   }
 
-  // 5) Buttons für Grid/List
   const gridBtn = document.getElementById('grid-btn');
   const listBtn = document.getElementById('list-btn');
   if (gridBtn) gridBtn.addEventListener('click',  renderGrid);
   if (listBtn) listBtn.addEventListener('click',  renderList);
 
-  // Default-Ansicht
+ 
   renderGrid();
 
-  // 6) Join-Modal
+ 
   const joinBtn = document.getElementById('join-btn');
   const modal   = document.getElementById('join-modal');
   const closeBtn= document.getElementById('close-btn');

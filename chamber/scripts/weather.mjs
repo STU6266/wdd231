@@ -1,22 +1,22 @@
-// js/weather.mjs
+
 const apiKey = '5140e54ec933ab3ca6ae2fe9a7227eaa';
-const lat = 48.2082;    // e.g. Vienna
+const lat = 48.2082;    
 const lon = 16.3738;
 const units = 'metric';
 const lang = 'en';
 
-// Selectors for current weather
-const townEl       = document.querySelector('#town');
-const tempEl       = document.querySelector('#current-temp');
-const descEl       = document.querySelector('#current-desc');
-const highEl       = document.querySelector('#high-temp');
-const lowEl        = document.querySelector('#low-temp');
-const humidityEl   = document.querySelector('#humidity');
-const sunriseEl    = document.querySelector('#sunrise');
-const sunsetEl     = document.querySelector('#sunset');
-const iconEl       = document.querySelector('#weather-icon');
 
-// Selector for forecast
+const townEl = document.querySelector('#town');
+const tempEl = document.querySelector('#current-temp');
+const descEl = document.querySelector('#current-desc');
+const highEl = document.querySelector('#high-temp');
+const lowEl = document.querySelector('#low-temp');
+const humidityEl = document.querySelector('#humidity');
+const sunriseEl = document.querySelector('#sunrise');
+const sunsetEl = document.querySelector('#sunset');
+const iconEl  = document.querySelector('#weather-icon');
+
+
 const forecastEl   = document.querySelector('#forecast-list');
 
 export async function loadCurrentWeather() {
@@ -55,7 +55,7 @@ export async function loadForecast() {
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
 
-    // take days 0 (today), 1 (tomorrow), 2 (day after)
+
     const days = data.daily.slice(0, 3);
     forecastEl.innerHTML = days.map(day => {
       const weekday = new Date(day.dt * 1000)
