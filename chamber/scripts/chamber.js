@@ -2,6 +2,16 @@ import { loadEvents }        from './events.mjs';
 import { loadCurrentWeather } from './weather.mjs';
 import { loadForecast }      from './3dayWeather.mjs';
 
+document.addEventListener('DOMContentLoaded', () => {
+  loadEvents();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadEvents();
+  loadCurrentWeather();
+  loadForecast();
+});
+
 document.addEventListener('DOMContentLoaded', async () => {
   const yearEl = document.getElementById('currentYear');
   const modifiedEl = document.getElementById('lastModified');

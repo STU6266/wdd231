@@ -34,6 +34,7 @@
   </header>
  
   <main>
+ 
   <div class="hero">
     <img src="images/wien.jpg"
          alt="A beautiful view of Vienna, Austria"
@@ -43,27 +44,24 @@
      <a href="join.html" class="btn btn-primary">join</a>
    </div>
   </div>
-    
-  <section class="home-content">
-    <section class="card events">
-      <h2>Events</h2>
-      <ul id="events-list">
-      </ul>
-    </section>
+    <h1>Home</h1> 
+ <section class="home-content">
+     
+      <section class="card events">
+        <h2>Aktuelle Events</h2>
+        <ul id="events-list">
+          <li>Lade Events…</li>
+        </ul>
+      </section>
 
-    <section class="card weather current-weather">
-      <h2>current-weather</h2>
-      <div id="current-weather">
-        <p>Lade aktuelles Wetter…</p>
-      </div>
-    </section>
+  <section class="card weather current-weather">
+    <h2 id="town">Wien, AT</h2>
+    <p>Temperatur: <span id="current-temp">--</span></p>
 
-    <section class="card weather forecast">
-      <h2>weather forrcast</h2>
-      <ul id="forecast-list">
-        <li>Lade Vorhersage…</li>
-      </ul>
-    </section>
+    <figure>
+      <img id="weather-icon" src="" alt="Wetter-Icon">
+      <figcaption id="caption-desc">Lade Beschreibung…</figcaption>
+    </figure>
   </section>
   </main>
 
@@ -72,6 +70,6 @@
     <p id="lastModified">Last Modified: ...</p>
   </footer>
 
-  <script type="module" src="scripts/chamber.js"></script>
+  <script type="module" src="scripts/chamber.js" defer></script>
 </body>
 </html>
