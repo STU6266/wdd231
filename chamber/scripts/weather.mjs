@@ -1,61 +1,43 @@
-// js/weather.mjs
-const apiKey = '5140e54ec933ab3ca6ae2fe9a7227eaa';
-const lat = 48.2082; // z.B. Wien
-const lon = 16.3738;
-const units = 'metric';
-const lang = 'de';
+export async function loadWeather() {
+  const apiKey = 'DEIN_API_KEY';
+  const lat = 48.2082, lon = 16.3738;
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}` +
+              `&units=metric&lang=en&exclude=minutely,hourly,alerts&appid=${apiKey}`;
+  const townEl     = document.querySelector('#town');
+  const currentTempEl  = document.querySelector('#current-temp');
+  const currentDescEl  = document.querySelector('#current-desc');
+  const highTempEl     = document.querySelector('#high-temp');
+  const lowTempEl      = document.querySelector('#low-temp');
+  const humidityEl     = document.querySelector('#humidity');
+  const sunriseEl      = document.querySelector('#sunrise');
+  const sunsetEl       = document.querySelector('#sunset');
+  const iconEl         = document.querySelector('#weather-icon');
+  const forecastListEl = document.querySelector('#forecast-list');
 
-// Selektoren
-const townEl     = document.querySelector('#town');
-const currentTempEl  = document.querySelector('#current-temp');
-const currentDescEl  = document.querySelector('#current-desc');
-const highTempEl     = document.querySelector('#high-temp');
-const lowTempEl      = document.querySelector('#low-temp');
-const humidityEl     = document.querySelector('#humidity');
-const sunriseEl      = document.querySelector('#sunrise');
-const sunsetEl       = document.querySelector('#sunset');
-const iconEl         = document.querySelector('#weather-icon');
-const forecastListEl = document.querySelector('#forecast-list');
-
-async function loadWeather() {
   try {
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}` +
-                `&units=${units}&lang=${lang}&exclude=minutely,hourly,alerts&appid=${apiKey}`;
     const res = await fetch(url);
-    if (!res.ok) throw new Error(res.statusText);
+    if (!res.ok) throw new Error(res.status);
     const data = await res.json();
 
-    // Ort
-    townEl.textContent = data.timezone.split('/').pop().replace('_', ' ');
-
-    // Aktuelles Wetter
-    currentTempEl.textContent = `${Math.round(data.current.temp)}°C`;
-    currentDescEl.textContent = data.current.weather[0].description;
-    highTempEl.textContent    = `${Math.round(data.daily[0].temp.max)}°C`;
-    lowTempEl.textContent     = `${Math.round(data.daily[0].temp.min)}°C`;
-    humidityEl.textContent    = `${data.current.humidity}%`;
-
-    // Sonnenauf- & untergang
-    const toTime = ts => new Date(ts * 1000).toLocaleTimeString('de-DE', {hour: '2-digit', minute:'2-digit'});
-    sunriseEl.textContent = toTime(data.current.sunrise);
-    sunsetEl.textContent  = toTime(data.current.sunset);
-
-    // Icon
+    townEl.textContent       = data.timezone.split('/').pop().replace('_',' ');
+    currentTempEl.textContent= `${Math.round(data.current.temp)}°C`;
+    currentDescEl.textContent= data.current.weather[0].description;
+    highTempEl.textContent   = `${Math.round(data.daily[0].temp.max)}°C`;
+    lowTempEl.textContent    = `${Math.round(data.daily[0].temp.min)}°C`;
+    humidityEl.textContent   = `${data.current.humidity}%`;
+    const toTime = ts => new Date(ts*1000).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+    sunriseEl.textContent    = toTime(data.current.sunrise);
+    sunsetEl.textContent     = toTime(data.current.sunset);
     const iconCode = data.current.weather[0].icon;
-    iconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    iconEl.alt = data.current.weather[0].description;
+    iconEl.src               = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    iconEl.alt               = data.current.weather[0].description;
 
-    // Forecast für heute, morgen, übermorgen
-    forecastListEl.innerHTML = data.daily.slice(0,3).map((day,i) => {
-      const date = new Date(day.dt * 1000).toLocaleDateString('de-DE', {weekday:'long'});
-      return `<li><strong>${date}:</strong> ${Math.round(day.temp.day)}°C</li>`;
+    forecastListEl.innerHTML = data.daily.slice(0,3).map(day => {
+      const weekday = new Date(day.dt*1000).toLocaleDateString('en-US',{weekday:'long'});
+      return `<li><strong>${weekday}:</strong> ${Math.round(day.temp.day)}°C</li>`;
     }).join('');
-
-  } catch (err) {
-    console.error('Fehler beim Laden des Wetters:', err);
-    currentDescEl.textContent = 'Wetterdaten nicht verfügbar.';
-    forecastListEl.innerHTML = '<li>Lädt nicht…</li>';
+  } catch {
+    currentDescEl.textContent  = 'Weather unavailable';
+    forecastListEl.innerHTML   = '<li>Unable to load forecast.</li>';
   }
 }
-
-document.addEventListener('DOMContentLoaded', loadWeather);

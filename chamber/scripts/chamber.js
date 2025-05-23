@@ -1,15 +1,11 @@
-import { loadEvents }        from './events.mjs';
-import { loadCurrentWeather } from './weather.mjs';
-import { loadForecast }      from './3dayWeather.mjs';
+import { loadEvents }    from './events.mjs';
+import { loadWeather }   from './weather.mjs';
+import { loadSpotlights }from './members.mjs';
 
 document.addEventListener('DOMContentLoaded', () => {
   loadEvents();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  loadEvents();
-  loadCurrentWeather();
-  loadForecast();
+  loadWeather();
+  loadSpotlights();
 });
 
 document.addEventListener('DOMContentLoaded', async () => {

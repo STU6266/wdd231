@@ -264,7 +264,6 @@ img {
   margin-bottom: var(--gap);
 }
 
-/* Sorge dafür, dass das Wetter-Icon nicht zu groß ist */
 .current-weather figure,
 .current-weather img {
   margin: 0;
@@ -272,15 +271,14 @@ img {
 }
 
 .current-weather img {
-  /* Maximal 100px breit, skaliert proportional */
-  max-width: 100px;
+  max-width: 50px;
   width: 100%;
   height: auto;
   display: block;
   margin: 0.5rem auto;
 }
 
-/* Optional: Forecast-List schön formatieren */
+
 .forecast-weather ul {
   list-style: none;
   padding: 0;
@@ -289,3 +287,52 @@ img {
 .forecast-weather li {
   margin-bottom: 0.5rem;
 }
+
+/* Member Spotlight Grid */
+.spotlight-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.spotlight-card {
+  background: var(--background-color);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px var(--card-shadow);
+  padding: var(--gap);
+  text-align: center;
+}
+
+.spotlight-card img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: var(--gap);
+}
+
+.spotlight-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.spotlight-card p,
+.spotlight-card a {
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.spotlight-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: collapse to 1 column under 600px */
+@media (max-width: 600px) {
+  .spotlight-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
