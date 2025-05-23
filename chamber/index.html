@@ -44,32 +44,48 @@
      <a href="join.html" class="btn btn-primary">join</a>
    </div>
   </div>
+
     <h1>Home</h1> 
- <section class="home-content" aria-label="Startseiten-Übersicht">
-    
-     
+    <!-- Grid: Events (2fr) | Current Weather (1fr) | Forecast (1fr) -->
+    <section class="home-content grid-overview container" aria-label="Startseiten-Übersicht">
+      <!-- Events -->
       <section class="card events">
-        <h2>Aktuelle Events</h2>
+        <h2>Events</h2>
         <ul id="events-list">
           <li>Lade Events…</li>
         </ul>
       </section>
- </section>
 
-  <section class="card weather current-weather">
-    <h2 id="town">Wien, AT</h2>
-    <p>Temperatur: <span id="current-temp">--</span></p>
+      <!-- Aktuelles Wetter -->
+      <section class="card weather current-weather">
+        <h2 id="town">Stadt, Land</h2>
+        <figure>
+          <img id="weather-icon" src="images/weather-icon.svg" alt="Wetter Icon">
+        </figure>
+        <p>Aktuell: <strong><span id="current-temp">--°C</span></strong>, <span id="current-desc">---</span></p>
+        <p>Hoch: <strong><span id="high-temp">--°C</span></strong> | Tief: <strong><span id="low-temp">--°C</span></strong></p>
+        <p>Feuchtigkeit: <strong><span id="humidity">--%</span></strong></p>
+        <p>Sonnenaufgang: <strong><time id="sunrise">--:--</time></strong></p>
+        <p>Sonnenuntergang: <strong><time id="sunset">--:--</time></strong></p>
+        
+      </section>
 
-    <figure>
-      <!-- Beispiel mit transparentem GIF als Platzhalter -->
-      <img
-        id="weather-icon"
-        src="images/weather-icon.svg"
-        alt="Wetter-Icon (lädt …)">
+      <!-- Wetter Forecast -->
+      <section class="card weather forecast-weather">
+        <h2>Weather Forecast</h2>
+        <ul id="forecast-list">
+          <li>Lädt…</li>
+        </ul>
+      </section>
+    </section>
 
-      <figcaption id="caption-desc">Lade Beschreibung…</figcaption>
-    </figure>
-  </section>
+    <!-- Member Spotlights -->
+    <section id="spotlights" class="spotlights container">
+      <h2>Member Spotlights</h2>
+      <div class="spotlight-cards">
+        <!-- JS fügt hier zufällige Gold/Silber-Mitglieder hinzu -->
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
