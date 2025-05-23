@@ -45,7 +45,8 @@
    </div>
   </div>
     <h1>Home</h1> 
- <section class="home-content">
+ <section class="home-content" aria-label="Startseiten-Übersicht">
+    
      
       <section class="card events">
         <h2>Aktuelle Events</h2>
@@ -53,13 +54,19 @@
           <li>Lade Events…</li>
         </ul>
       </section>
+ </section>
 
   <section class="card weather current-weather">
     <h2 id="town">Wien, AT</h2>
     <p>Temperatur: <span id="current-temp">--</span></p>
 
     <figure>
-      <img id="weather-icon" src="" alt="Wetter-Icon">
+      <!-- Beispiel mit transparentem GIF als Platzhalter -->
+      <img
+        id="weather-icon"
+        src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+        alt="Wetter-Icon (lädt …)">
+
       <figcaption id="caption-desc">Lade Beschreibung…</figcaption>
     </figure>
   </section>
@@ -70,6 +77,6 @@
     <p id="lastModified">Last Modified: ...</p>
   </footer>
 
-  <script type="module" src="scripts/chamber.js" defer></script>
+  <script type="module" src="scripts/chamber.js"></script>
 </body>
 </html>
