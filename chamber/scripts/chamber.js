@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadForecast();
   loadSpotlights();
 
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
  
   const yearEl     = document.getElementById('currentYear');
   const modifiedEl = document.getElementById('lastModified');
