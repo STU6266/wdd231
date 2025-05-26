@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Business Directory – My Chamber of Commerce</title>
+  <meta name="description" content="Discover local businesses in the directory of your Chamber of Commerce. Grid or list view.">
+  <meta name="author" content="Steven Kemendics">
+
+  
+  <meta property="og:title" content="Business Directory – My Chamber of Commerce">
+  <meta property="og:description" content="Browse and connect with verified local businesses in our chamber's directory. Find trusted services and partners in your region.">
+  <meta property="og:image" content="https://stu6266.github.io/wdd231/chamber/images/dom.webp">
+  <meta property="og:url" content="https://stu6266.github.io/wdd231/chamber/directory.html">
+  <meta property="og:type" content="website">
+
+  <link rel="preload" href="styles/NewLarge.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles/NewLarge.css"></noscript>
+  <link rel="preload" href="data/members.json" as="fetch" crossorigin="anonymous">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      …  
+      <button class="mode-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+
+    <h1>Vienna - Austria Chamber of Commerce</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="images/wien.jpg" alt="A beautiful view of Vienna, Austria" loading="lazy">
+  </div>
+
+  <main class="join-layout">
+    <form method="get" action="thankyou.html" id="joinForm">
+      <label>
+        First Name:
+        <input type="text" name="fname" required title="Enter your first name" autocomplete="given-name" />
+      </label>
+      <label>
+        Last Name:
+        <input type="text" name="lname" required title="Enter your last name" autocomplete="family-name" />
+      </label>
+      <label>
+        Organizational Title:
+        <input type="text" name="orgtitle" title="Your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" />
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@email.com" />
+      </label>
+      <label>
+        Mobile Phone:
+        <input type="tel" name="phone" required title="Enter your phone number" autocomplete="tel" />
+      </label>
+      <label>
+        Organization Name:
+        <input type="text" name="organization" required title="Enter your organization name" autocomplete="organization" />
+      </label>
+      <label>
+        Membership Level:
+        <select name="membership" required title="Select a membership level">
+          <option value="">--Select--</option>
+          <option value="np">NP Membership (Free)</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </label>
+      <label>
+        Organization Description:
+        <textarea name="description" title="Describe your organization"></textarea>
+      </label>
+      <input type="hidden" name="timestamp" id="timestamp" />
+      <input type="submit" value="Submit Application" />
+    </form>
+
+    <section id="membershipCards" class="cards-container">
+      <div class="card" id="np-card">
+        <h2>Non Profit Membership Level</h2>
+        <a href="#" onclick="document.getElementById('np-modal').showModal()">Learn More</a>
+      </div>
+      <div class="card" id="bronze-card">
+        <h2>Bronze Membership Level</h2>
+        <a href="#" onclick="document.getElementById('bronze-modal').showModal()">Learn More</a>
+      </div>
+      <div class="card" id="silver-card">
+        <h2>Silver Membership Level</h2>
+        <a href="#" onclick="document.getElementById('silver-modal').showModal()">Learn More</a>
+      </div>
+      <div class="card" id="gold-card">
+        <h2>Gold Membership Level</h2>
+        <a href="#" onclick="document.getElementById('gold-modal').showModal()">Learn More</a>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <dialog id="np-modal"><h3>NP Membership Benefits</h3><p>Free membership, community support, directory listing.</p><button onclick="document.getElementById('np-modal').close()">Close</button></dialog>
+    <dialog id="bronze-modal"><h3>Bronze Membership Benefits</h3><p>Basic exposure and event access.</p><button onclick="document.getElementById('bronze-modal').close()">Close</button></dialog>
+    <dialog id="silver-modal"><h3>Silver Membership Benefits</h3><p>Spotlight listing, extra benefits, training.</p><button onclick="document.getElementById('silver-modal').close()">Close</button></dialog>
+    <dialog id="gold-modal"><h3>Gold Membership Benefits</h3><p>Premium placement, discounts, all features.</p><button onclick="document.getElementById('gold-modal').close()">Close</button></dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
+    <p id="lastModified">Last Modified: ...</p>
+  </footer>
+
+  <script>
+    // Timestamp for hidden field
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("timestamp").value = new Date().toISOString();
+
+      // Optional card animation
+      document.querySelectorAll(".card").forEach((card, i) => {
+        card.style.opacity = 0;
+        setTimeout(() => {
+          card.style.transition = "opacity 0.8s ease";
+          card.style.opacity = 1;
+        }, i * 200);
+      });
+
+      // Update year + last modified
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+    });
+  </script>
+</body>
+</html>

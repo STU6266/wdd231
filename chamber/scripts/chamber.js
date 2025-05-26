@@ -85,4 +85,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (e.target === modal) modal.style.display = 'none';
     });
   }
+  const timestampEl = document.getElementById("timestamp");
+  if (timestampEl) {
+    const now = new Date().toISOString();
+    timestampEl.value = now;
+  }
+
+  // Optional: animiere Karten auf Seitenstart
+  document.querySelectorAll(".card").forEach((card, i) => {
+    card.style.opacity = 0;
+    setTimeout(() => {
+      card.style.transition = "opacity 0.8s ease-in-out";
+      card.style.opacity = 1;
+    }, i * 200);
+  });
 });
