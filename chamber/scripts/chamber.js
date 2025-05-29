@@ -5,13 +5,13 @@ import { loadSpotlights }       from './members.mjs';
 
 document.addEventListener('DOMContentLoaded', async () => {
 
-  // Lade Module für die Startseite
+ 
   loadEvents();
   loadCurrentWeather();
   loadForecast();
   loadSpotlights();
 
-  // Mobile Menü-Toggle
+
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
   if (menuToggle && nav) {
@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Datum + Last Modified in Footer
+
   const yearEl = document.getElementById('currentYear');
   const modifiedEl = document.getElementById('lastModified');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   if (modifiedEl) modifiedEl.textContent = `Last Modified: ${new Date(document.lastModified).toLocaleDateString()}`;
 
-  // Directory-Ansicht (Grid vs List)
+
   const directoryEl = document.getElementById('directory');
   let membersData = [];
   try {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (directoryEl) renderGrid();
 
-  // Modal öffnen/schließen (optional falls verwendet)
+
   const joinBtn = document.getElementById('join-btn');
   const modal = document.getElementById('join-modal');
   const closeBtn = document.getElementById('close-btn');
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Timestamp-Feld setzen (join.html)
+
   const timestampEl = document.getElementById("timestamp");
   if (timestampEl) {
     const now = new Date().toISOString();
     timestampEl.value = now;
   }
 
-  // Animation der Karten bei Seitenstart (join.html)
+
   document.querySelectorAll(".card").forEach((card, i) => {
     card.style.opacity = 0;
     setTimeout(() => {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, i * 200);
   });
 
-  // Anzeige der URL-Parameter (thankyou.html)
+ 
   const params = new URLSearchParams(window.location.search);
   const fieldIds = ["fname", "lname", "email", "phone", "organization", "timestamp"];
   fieldIds.forEach(id => {
