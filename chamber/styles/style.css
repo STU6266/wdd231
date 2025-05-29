@@ -52,7 +52,12 @@ header.site-header h1 {
 
 /* Platzhalter für fixierten Header */
 main {
-  padding-top: 120px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* Hero-Bereich */
@@ -224,13 +229,8 @@ form input[type="submit"]:hover {
   }
 }
 
-/* Responsive Grid für größere Bildschirme */
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
-    align-items: start;
-  }
-}
+
+
 
 @media (max-width: 767px) {
   main {
@@ -275,12 +275,8 @@ form input[type="submit"]:hover {
   padding: 0 1rem;
 }
 
-@media (min-width: 768px) {
-  .join-layout {
-    grid-template-columns: 2fr 1fr;
-    align-items: start;
-  }
-}
+
+
 
 /* --- BEGIN: Additional styles from large.css --- */
 
@@ -498,4 +494,81 @@ body {
 }
 .footer-nav a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 641px) {
+  .gallery img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+}
+
+.visit-sidebar {
+  background: #fff8e1;
+  padding: 1rem;
+  border-left: 4px solid #ffc107;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.discover-layout {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+/* Mobile: 1 Spalte */
+@media (max-width: 640px) {
+  .discover-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet: 2 Spalten */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 Spalten */
+@media (min-width: 1025px) {
+  .discover-layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.discover-card {
+  background: #fff;
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.discover-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.discover-card h2 {
+  margin: 0.5rem 0;
+}
+
+.discover-card button {
+  background-color: #264653;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
 }

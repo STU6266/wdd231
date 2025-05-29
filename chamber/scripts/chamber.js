@@ -107,4 +107,44 @@ document.addEventListener('DOMContentLoaded', async () => {
     const el = document.getElementById(id);
     if (el) el.textContent = params.get(id) || "–";
   });
+
+  const visitMessage = document.getElementById('visit-message');
+if (visitMessage) {
+  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  const lastVisit = localStorage.getItem('lastVisit');
+  const now = Date.now();
+
+  if (!lastVisit) {
+    visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+    const days = Math.floor((now - Number(lastVisit)) / MILLISECONDS_PER_DAY);
+    if (days < 1) {
+      visitMessage.textContent = "Back so soon! Awesome!";
+    } else {
+      visitMessage.textContent = `You last visited ${days} day${days === 1 ? '' : 's'} ago.`;
+    }
+  }
+
+  localStorage.setItem('lastVisit', now);
+}
+
+const discoverSection = document.getElementById('discover-cards');
+if (discoverSection) {
+  fetch('data/discover.json')
+    .then(response => response.json())
+    .then(data => {
+      discoverSection.innerHTML = data.map(item => `
+        <article class="discover-card">
+          <h2>${item.title}</h2>
+          <figure>
+            <img src="${item.image}" alt="${item.title}">
+          </figure>
+          <address>${item.address}</address>
+          <p>${item.description}</p>
+          <button>Learn More</button>
+        </article>
+      `).join('');
+    });
+}
+
 });
