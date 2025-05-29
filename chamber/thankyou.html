@@ -42,7 +42,7 @@
     <img src="images/wien.jpg" alt="A beautiful view of Vienna, Austria" loading="lazy">
   </div>
 
-   <main class="thankyou">
+  <main class="thankyou">
     <h2>Thank You for Your Submission!</h2>
     <p>We’ve received your membership application. Here’s what you submitted:</p>
 
@@ -56,26 +56,11 @@
     </div>
   </main>
 
-
   <footer class="site-footer">
     <p>&copy; <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
   </footer>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById("fname").textContent = params.get("fname") || "–";
-    document.getElementById("lname").textContent = params.get("lname") || "–";
-    document.getElementById("email").textContent = params.get("email") || "–";
-    document.getElementById("phone").textContent = params.get("phone") || "–";
-    document.getElementById("organization").textContent = params.get("organization") || "–";
-    document.getElementById("timestamp").textContent = params.get("timestamp") || "–";
-
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-  </script>
-
   <script type="module" src="scripts/chamber.js"></script>
-
 </body>
-</html> 
+</html>

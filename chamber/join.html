@@ -44,33 +44,14 @@
 
   <main class="join-layout">
     <form method="get" action="thankyou.html" id="joinForm">
-      <label>
-        First Name:
-        <input type="text" name="fname" required title="Enter your first name" autocomplete="given-name" />
-      </label>
-      <label>
-        Last Name:
-        <input type="text" name="lname" required title="Enter your last name" autocomplete="family-name" />
-      </label>
-      <label>
-        Organizational Title:
-        <input type="text" name="orgtitle" title="Your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" />
-      </label>
-      <label>
-        Email:
-        <input type="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@email.com" />
-      </label>
-      <label>
-        Mobile Phone:
-        <input type="tel" name="phone" required title="Enter your phone number" autocomplete="tel" />
-      </label>
-      <label>
-        Organization Name:
-        <input type="text" name="organization" required title="Enter your organization name" autocomplete="organization" />
-      </label>
-      <label>
-        Membership Level:
-        <select name="membership" required title="Select a membership level">
+      <label>First Name: <input type="text" name="fname" required autocomplete="given-name" title="Enter your first name" /></label>
+      <label>Last Name: <input type="text" name="lname" required autocomplete="family-name" title="Enter your last name" /></label>
+      <label>Organizational Title: <input type="text" name="orgtitle" pattern="[A-Za-z\s\-]{7,}" title="Your organizational title" autocomplete="organization-title" /></label>
+      <label>Email: <input type="email" name="email" required placeholder="example@email.com" autocomplete="email" title="Enter your email" /></label>
+      <label>Mobile Phone: <input type="tel" name="phone" required autocomplete="tel" title="Enter your phone number" /></label>
+      <label>Organization Name: <input type="text" name="organization" required autocomplete="organization" title="Enter your organization name" /></label>
+      <label>Membership Level:
+        <select name="membership" required>
           <option value="">--Select--</option>
           <option value="np">NP Membership (Free)</option>
           <option value="bronze">Bronze Membership</option>
@@ -78,8 +59,7 @@
           <option value="gold">Gold Membership</option>
         </select>
       </label>
-      <label>
-        Organization Description:
+      <label>Organization Description:
         <textarea name="description" title="Describe your organization"></textarea>
       </label>
       <input type="hidden" name="timestamp" id="timestamp" />
@@ -87,30 +67,17 @@
     </form>
 
     <section id="membershipCards" class="cards-container">
-      <div class="card" id="np-card">
-        <h2>Non Profit Membership Level</h2>
-        <a href="#" onclick="document.getElementById('np-modal').showModal()">Learn More</a>
-      </div>
-      <div class="card" id="bronze-card">
-        <h2>Bronze Membership Level</h2>
-        <a href="#" onclick="document.getElementById('bronze-modal').showModal()">Learn More</a>
-      </div>
-      <div class="card" id="silver-card">
-        <h2>Silver Membership Level</h2>
-        <a href="#" onclick="document.getElementById('silver-modal').showModal()">Learn More</a>
-      </div>
-      <div class="card" id="gold-card">
-        <h2>Gold Membership Level</h2>
-        <a href="#" onclick="document.getElementById('gold-modal').showModal()">Learn More</a>
-      </div>
+      <div class="card"><h2>Non Profit Membership Level</h2><a href="#" onclick="document.getElementById('np-modal').showModal()">Learn More</a></div>
+      <div class="card"><h2>Bronze Membership Level</h2><a href="#" onclick="document.getElementById('bronze-modal').showModal()">Learn More</a></div>
+      <div class="card"><h2>Silver Membership Level</h2><a href="#" onclick="document.getElementById('silver-modal').showModal()">Learn More</a></div>
+      <div class="card"><h2>Gold Membership Level</h2><a href="#" onclick="document.getElementById('gold-modal').showModal()">Learn More</a></div>
     </section>
 
-    <!-- MODALS -->
-    <dialog id="np-modal"><h3>NP Membership Benefits</h3><p>Free membership, community support, directory listing.</p><button onclick="document.getElementById('np-modal').close()">Close</button></dialog>
-    <dialog id="bronze-modal"><h3>Bronze Membership Benefits</h3><p>Basic exposure and event access.</p><button onclick="document.getElementById('bronze-modal').close()">Close</button></dialog>
-    <dialog id="silver-modal"><h3>Silver Membership Benefits</h3><p>Spotlight listing, extra benefits, training.</p><button onclick="document.getElementById('silver-modal').close()">Close</button></dialog>
-    <dialog id="gold-modal"><h3>Gold Membership Benefits</h3><p>Premium placement, discounts, all features.</p><button onclick="document.getElementById('gold-modal').close()">Close</button></dialog>
 
+    <dialog id="np-modal"><h3>NP Membership Benefits</h3><p>Free membership, support, listing.</p><button onclick="document.getElementById('np-modal').close()">Close</button></dialog>
+    <dialog id="bronze-modal"><h3>Bronze Membership Benefits</h3><p>Event access, basic exposure.</p><button onclick="document.getElementById('bronze-modal').close()">Close</button></dialog>
+    <dialog id="silver-modal"><h3>Silver Membership Benefits</h3><p>Spotlight listing, training.</p><button onclick="document.getElementById('silver-modal').close()">Close</button></dialog>
+    <dialog id="gold-modal"><h3>Gold Membership Benefits</h3><p>Premium placement, full benefits.</p><button onclick="document.getElementById('gold-modal').close()">Close</button></dialog>
   </main>
 
   <footer class="site-footer">
@@ -118,24 +85,6 @@
     <p id="lastModified">Last Modified: ...</p>
   </footer>
 
-  <script>
-    // Timestamp for hidden field
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("timestamp").value = new Date().toISOString();
-
-      // Optional card animation
-      document.querySelectorAll(".card").forEach((card, i) => {
-        card.style.opacity = 0;
-        setTimeout(() => {
-          card.style.transition = "opacity 0.8s ease";
-          card.style.opacity = 1;
-        }, i * 200);
-      });
-
-      // Update year + last modified
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
-      document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-    });
-  </script>
+  <script type="module" src="scripts/chamber.js"></script>
 </body>
 </html>
