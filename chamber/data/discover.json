@@ -1,13 +1,13 @@
 [
   {
     "title": "Schönbrunn Palace",
-    "image": "images/schonbrunn.webp",
+    "image": "images/schönbrunn.webp",
     "address": "Schönbrunner Schloßstraße 47, 1130 Wien",
     "description": "Historic Baroque palace with vast gardens and the oldest zoo in the world."
   },
   {
     "title": "Stephansdom",
-    "image": "images/stephansdom.webp",
+    "image": "images/dom.webp",
     "address": "Stephansplatz 3, 1010 Wien",
     "description": "The Gothic cathedral is one of Vienna's most iconic buildings."
   },
@@ -19,7 +19,7 @@
   },
   {
     "title": "Kunsthistorisches Museum",
-    "image": "images/khm.webp",
+    "image": "images/kunsthistorisches.webp",
     "address": "Maria-Theresien-Platz, 1010 Wien",
     "description": "One of the premier fine arts museums in Europe."
   },
