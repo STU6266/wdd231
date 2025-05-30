@@ -19,7 +19,7 @@
   <link rel="preload" href="data/members.json" as="fetch" crossorigin="anonymous">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="directory-page">
   <header class="site-header">
     <h1>Vienna - Austria Chamber of Commerce</h1>
     <nav class="main-nav">
@@ -34,12 +34,14 @@
 
   <main>
     <h1>Business Directory</h1>
+
     <section class="directory-controls">
       <div class="view-toggle">
         <button id="grid-btn" aria-pressed="true">Grid</button>
         <button id="list-btn" aria-pressed="false">List</button>
       </div>
     </section>
+
     <section id="directory" class="grid-view"></section>
   </main>
 
