@@ -50,7 +50,6 @@ header.site-header h1 {
   border-bottom: 2px solid #ffcc00;
 }
 
-/* Platzhalter für fixierten Header */
 main {
   max-width: 1200px;
   margin: 2rem auto;
@@ -109,7 +108,6 @@ main {
   background-color: #ffc107;
 }
 
-/* Join-Titel */
 main h1 {
   text-align: center;
   font-size: 2.4rem;
@@ -117,7 +115,7 @@ main h1 {
   color: #2c3e50;
 }
 
-/* Footer */
+
 .site-footer {
   background-color: #1a1a1a;
   color: #ddd;
@@ -132,7 +130,7 @@ main h1 {
   color: #ffcc00;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   header.site-header h1 {
     font-size: 1.2rem;
@@ -199,7 +197,7 @@ form input[type="submit"]:hover {
   background-color: #0055aa;
 }
 
-/* Cards Section */
+
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -250,7 +248,7 @@ form input[type="submit"]:hover {
   background: #000;
 }
 
-/* Animation */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -552,21 +550,21 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Mobile: 1 Spalte */
+
 @media (max-width: 640px) {
   .discover-layout {
     grid-template-columns: 1fr;
   }
 }
 
-/* Tablet: 2 Spalten */
+
 @media (min-width: 641px) and (max-width: 1024px) {
   .discover-layout {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop: 3 Spalten */
+
 @media (min-width: 1025px) {
   .discover-layout {
     grid-template-columns: repeat(3, 1fr);
