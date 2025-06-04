@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   if (modifiedEl) modifiedEl.textContent = `Last Modified: ${new Date(document.lastModified).toLocaleDateString()}`;
 
-  // Directory Grid/List Ansicht
+
   const directoryEl = document.getElementById('directory');
   const gridBtn = document.getElementById('grid-btn');
   const listBtn = document.getElementById('list-btn');
@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (gridBtn) gridBtn.addEventListener('click', renderGrid);
   if (listBtn) listBtn.addEventListener('click', renderList);
-  if (directoryEl) renderGrid(); // Default: Grid
+  if (directoryEl) renderGrid(); 
 
-  // Join Modal
+
   const joinBtn = document.getElementById('join-btn');
   const modal = document.getElementById('join-modal');
   const closeBtn = document.getElementById('close-btn');
@@ -83,14 +83,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Timestamp für Join-Form
+
   const timestampEl = document.getElementById("timestamp");
   if (timestampEl) {
     const now = new Date().toISOString();
     timestampEl.value = now;
   }
 
-  // Kartenanimation
+
   document.querySelectorAll(".card").forEach((card, i) => {
     card.style.opacity = 0;
     setTimeout(() => {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, i * 200);
   });
 
-  // URL Params auf "thankyou" Seite anzeigen
+ 
   const params = new URLSearchParams(window.location.search);
   const fieldIds = ["fname", "lname", "email", "phone", "organization", "timestamp"];
   fieldIds.forEach(id => {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (el) el.textContent = params.get(id) || "–";
   });
 
-  // Visit-Message (localStorage)
+
   const visitMessage = document.getElementById('visit-message');
   if (visitMessage) {
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     localStorage.setItem('lastVisit', now);
   }
 
-  // Discover-Karten laden
+
   const discoverSection = document.getElementById('discover-cards');
   if (discoverSection) {
     fetch('data/discover.json')
