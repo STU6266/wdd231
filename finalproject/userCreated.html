@@ -3,49 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Fanta Quotinator – Generator for Fantasy quotes</title>
-  <meta name="description" content="A fun way to kill some time and to learn some new quotes from your favorite fantasy movies and books.">
-  <meta name="keywords" content="fantasy, quotes, generator, fun, inspiration, movies, books">
+  <title>Fanta Quotinator – Quotes by Users</title>
+  <meta name="description" content="User-created fantasy quotes and wallpapers gallery.">
   <meta name="author" content="Steven Kemendics">
 
-  
-  <meta property="og:title" content="Fanta Quotinator – Generator for Fantasy quotes">
-  <meta property="og:description" content="A fun way to kill some time and to learn some new quotes from your favorite fantasy movies and books.">
+  <meta property="og:title" content="Fanta Quotinator – Quotes by Users">
+  <meta property="og:description" content="User-created fantasy quotes and wallpapers gallery.">
   <meta property="og:image" content="https://stu6266.github.io/wdd231/finalproject/images/?.webp">
-  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/index.html">
+  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/userCreated.html">
   <meta property="og:site_name" content="Fanta Quotinator">
   <meta property="og:type" content="website">
 
-  <link rel="preload" href="styles/generator.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="data/generator.json" as="fetch" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/generator.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header class="site-header fantasy-header">
-  <div class="header-glow"></div>
-  <div class="container header-inner">
-    <h1>✨ Fanta Quotinator ✨</h1>
-    <p class="tagline">"Unleash your inner wizard with timeless quotes"</p>
-    <div class="header-buttons">
-      <button class="mode-toggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <header class="site-header fantasy-header" role="banner">
+    <div class="header-glow"></div>
+    <div class="container header-inner">
+      <h1>✨ Fanta Quotinator ✨</h1>
+      <p class="tagline">"Unleash your inner wizard with timeless quotes"</p>
+      <div class="header-buttons">
+        <button class="mode-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
     </div>
-  </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="create.html">Wallpaper Maker</a></li>
-      <li><a href="userCreated.html">Quotes by Users</a></li>
-    </ul>
-  </nav>
-  <h1>Form Submission Result</h1>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="create.html">Wallpaper Maker</a></li>
+        <li><a href="userCreated.html" aria-current="page">Quotes by Users</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="form-container">
-    <h2>Your Created Quote</h2>
-    <div id="result"></div>
+  <main class="form-container" role="main">
+    <h2 id="user-quote-title">Your Created Quotes</h2>
+    <div id="result" role="region" aria-labelledby="user-quote-title"></div>
   </main>
-  <footer class="site-footer">
+
+  <footer class="site-footer" role="contentinfo">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
   </footer>

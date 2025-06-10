@@ -8,71 +8,81 @@
   <meta name="keywords" content="fantasy, quotes, generator, fun, inspiration, movies, books">
   <meta name="author" content="Steven Kemendics">
 
-  
   <meta property="og:title" content="Fanta Quotinator – Generator for Fantasy quotes">
   <meta property="og:description" content="A fun way to kill some time and to learn some new quotes from your favorite fantasy movies and books.">
   <meta property="og:image" content="https://stu6266.github.io/wdd231/finalproject/images/?.webp">
-  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/index.html">
+  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/create.html">
   <meta property="og:site_name" content="Fanta Quotinator">
   <meta property="og:type" content="website">
 
-  <link rel="preload" href="styles/generator.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="data/generator.json" as="fetch" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/generator.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header class="site-header fantasy-header">
-  <div class="header-glow"></div>
-  <div class="container header-inner">
-    <h1>✨ Fanta Quotinator ✨</h1>
-    <p class="tagline">"Unleash your inner wizard with timeless quotes"</p>
-    <div class="header-buttons">
-      <button class="mode-toggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <header class="site-header fantasy-header" role="banner">
+    <div class="header-glow"></div>
+    <div class="container header-inner">
+      <h1>✨ Fanta Quotinator ✨</h1>
+      <p class="tagline">"Unleash your inner wizard with timeless quotes"</p>
+      <div class="header-buttons">
+        <button class="mode-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
     </div>
-  </div>
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="create.html">Wallpaper Maker</a></li>
-      <li><a href="userCreated.html">Quotes by Users</a></li>
-    </ul>
-  </nav>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="create.html" aria-current="page">Wallpaper Maker</a></li>
+        <li><a href="userCreated.html">Quotes by Users</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="form-container">
     <h2>Create Your Own Quote Wallpaper</h2>
-    <form id="create-form">
-        <label for="quote">Quote:</label>
-        <textarea id="quote" name="quote" required></textarea>
+    <form id="create-form" aria-label="Create quote form" method="get" action="formaction.html">
+      <label for="quote">Quote:</label>
+      <textarea id="quote" name="quote" required aria-label="Quote text input"></textarea>
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required aria-label="Author name input">
 
-        <label for="source">Source:</label>
-        <input type="text" id="source" name="source" required>
+      <label for="source">Source (Book):</label>
+      <input type="text" id="source" name="source" required aria-label="Source text input">
 
-        <label for="image">Image URL:</label>
-        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" required>
+      <label for="image">Custom Image URL:</label>
+      <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" aria-label="Custom image URL input">
 
-        <label for="wallpaper-select">Or choose from existing wallpapers:</label>
-        <select id="wallpaper-select">
-            <option value="">-- Select a wallpaper --</option>
-        </select>
+      <label for="wallpaper-select">Or choose from existing wallpapers:</label>
+      <select id="wallpaper-select" aria-label="Select wallpaper from list">
+        <option value="">-- Select a wallpaper --</option>
+      </select>
 
-        <div class="form-buttons">
-            <button type="button" id="preview-btn">Preview</button>
-            <button type="submit">Save</button>
-        </div>
+      <section id="wallpaper-gallery" class="wallpaper-gallery" aria-label="Wallpaper gallery"></section>
+
+      <div class="form-buttons">
+        <button type="button" id="preview-btn" aria-label="Preview your quote">Preview</button>
+        <button type="submit" aria-label="Save your quote">Save</button>
+      </div>
     </form>
 
-    <section id="preview-area" class="hero-preview" style="display:none;">
-        <h3>Preview</h3>
-        <div id="preview-output"></div>
+    <section id="preview-area" class="hero-preview" style="display:none;" aria-label="Quote preview area">
+      <h3>Preview</h3>
+      <div id="preview-output"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- Modal für Save-Confirmation -->
+  <div id="modal-overlay" class="modal-overlay" aria-hidden="true"></div>
+  <div id="save-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="save-modal-title">
+    <div class="modal-content">
+      <h2 id="save-modal-title">Saved</h2>
+      <p>Your quote has been saved!</p>
+      <button id="close-modal" aria-label="Close dialog">Close</button>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
   </footer>

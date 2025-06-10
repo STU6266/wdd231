@@ -185,11 +185,11 @@ nav a.active {
 #random-image {
   display: none; /* Bild wird als Hintergrund gesetzt */
 }
-
 #quote-text {
   font-size: 2rem;
   font-style: italic;
-
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem;
   border-radius: 10px;
   max-width: 80%;
@@ -197,6 +197,8 @@ nav a.active {
 }
 
 #quote-author {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
   margin-top: 1rem;
   font-weight: bold;
   color: #d4af37;
@@ -299,3 +301,215 @@ nav a.active {
   font-weight: bold;
   color: #d4af37;
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #1e1e2f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1001;
+  max-width: 90%;
+  width: 320px;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 0 0 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  background-color: #2e2e40;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #d4af37;
+  color: #1e1e2f;
+}
+
+.wallpaper-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.wallpaper-thumb {
+  width: 100px;
+  height: auto;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.wallpaper-thumb:hover {
+  transform: scale(1.1);
+  border-color: #ffffff;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1e1e2f;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+  }
+  .main-nav ul.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+body.dark {
+  background-color: #ffffff;
+  color: #1e1e2f;
+}
+
+header, footer {
+  background-color: #1e1e2f;
+  color: #d4af37;
+  text-align: center;
+  padding: 1em 0;
+  font-family: 'Cinzel Decorative', cursive;
+}
+body.dark header,
+body.dark footer {
+  background-color: #fafafa;
+  color: #1e1e2f;
+}
+
+.main-nav ul {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1e1e2f;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border: 1px solid #d4af37;
+    border-radius: 0 0 5px 5px;
+  }
+  .main-nav ul.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.fantasy-header {
+  position: relative;
+  background: linear-gradient(135deg, #1e1e2f, #3e2d5c);
+  overflow: hidden;
+  border-bottom: 2px solid #d4af37;
+}
+body.dark .fantasy-header {
+  background: linear-gradient(135deg, #fafafa, #eee);
+  border-bottom-color: #1e1e2f;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #1e1e2f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1001;
+  max-width: 90%;
+  width: 320px;
+  text-align: center;
+}
+.modal[role="dialog"] { /* ARIA */
+  outline: none;
+}
+body.dark .modal {
+  background-color: #1e1e2f;
+  color: #fafafa;
+}
+
+.modal-content p {
+  margin: 0 0 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  background-color: #2e2e40;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background-color: #d4af37;
+  color: #1e1e2f;
+}
+body.dark .modal-content button {
+  background-color: #fafafa;
+  color: #1e1e2f;
+  border-color: #1e1e2f;
+}
+body.dark .modal-content button:hover {
+  background-color: #1e1e2f;
+  color: #fafafa;
+}
+
+/* Deine übrigen Styles … */
