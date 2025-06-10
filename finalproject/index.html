@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
 
   <link rel="preload" href="styles/generator.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="data/generator.json" as="fetch" crossorigin="anonymous">
+  
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -34,15 +34,23 @@
   <nav class="main-nav">
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="occations.html">Occasions</a></li>
       <li><a href="create.html">Wallpaper Maker</a></li>
+      <li><a href="userCreated.html">Quotes by Users</a></li>
     </ul>
   </nav>
   </header>
 
-  <main>
+   <section id="quote-section">
+    <blockquote id="quote-text">Loading quote...</blockquote>
+    <p id="quote-author"></p>
+    <button id="new-quote-btn">🪄 New Quote</button>
+  </section>
 
+  <main>
+    
   </main>
+
+
   <footer class="site-footer">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>

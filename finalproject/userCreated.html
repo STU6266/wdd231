@@ -38,40 +38,13 @@
       <li><a href="userCreated.html">Quotes by Users</a></li>
     </ul>
   </nav>
+  <h1>Form Submission Result</h1>
   </header>
 
   <main class="form-container">
-    <h2>Create Your Own Quote Wallpaper</h2>
-    <form id="create-form">
-        <label for="quote">Quote:</label>
-        <textarea id="quote" name="quote" required></textarea>
-
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
-
-        <label for="source">Source:</label>
-        <input type="text" id="source" name="source" required>
-
-        <label for="image">Image URL:</label>
-        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" required>
-
-        <label for="wallpaper-select">Or choose from existing wallpapers:</label>
-        <select id="wallpaper-select">
-            <option value="">-- Select a wallpaper --</option>
-        </select>
-
-        <div class="form-buttons">
-            <button type="button" id="preview-btn">Preview</button>
-            <button type="submit">Save</button>
-        </div>
-    </form>
-
-    <section id="preview-area" class="hero-preview" style="display:none;">
-        <h3>Preview</h3>
-        <div id="preview-output"></div>
-    </section>
+    <h2>Your Created Quote</h2>
+    <div id="result"></div>
   </main>
-
   <footer class="site-footer">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
