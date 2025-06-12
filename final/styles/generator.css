@@ -512,4 +512,186 @@ body.dark .modal-content button:hover {
   color: #fafafa;
 }
 
-/* Deine übrigen Styles … */
+#quote-section {
+
+  background-image: url('images/crazy.webp');
+}
+
+ 
+ 
+
+    .fantasy-header {
+      background: linear-gradient(135deg,#1e1e2f,#3e2d5c);
+      position: relative; overflow: hidden;
+      border-bottom:2px solid #d4af37;
+    }
+    .main-nav ul {
+      display:flex; justify-content:center;
+    }
+
+    #quote-section {
+      width:100vw; height:100vh;
+      background-image:url('images/wallpaper1.webp');
+      background-size:cover; background-position:center;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:0; margin:0;
+    }
+    #quote-text, #quote-author {
+      background:rgba(0,0,0,0.6);
+      display:inline-block; border-radius:8px;
+      padding:0.5rem 1rem; color:#fff;
+    }
+    #new-quote-btn {
+      position:absolute; top:20px; right:20px;
+      background:#2e2e40; color:#d4af37;
+      border:1px solid #d4af37; padding:0.5rem 1rem;
+      border-radius:6px; cursor:pointer;
+    }
+ 
+.site-footer {
+  min-height: 4rem;
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: url('fonts/CinzelDecorative.woff2') format('woff2');
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto&display=swap');
+
+/* ————————— Critical Styles ————————— */
+
+/* Reset Margins/Paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header & Navigation */
+.fantasy-header {
+  background: linear-gradient(135deg, #1e1e2f, #3e2d5c);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid #d4af37;
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+  color: #d4af37;
+  padding: 1rem 0;
+}
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+/* Hero-Section */
+#quote-section {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#quote-text,
+#quote-author {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: #ffffff;
+}
+#new-quote-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2e2d40;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer: Platz reservieren, um CLS zu vermeiden */
+.site-footer {
+  min-height: 4rem;
+  background: #1e1e2f;
+  color: #d4af37;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ———————— Restliche Styles ———————— */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
+.header-glow {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%);
+  transform: translateX(-50%);
+  animation: pulseGlow 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%,100% { opacity:0.2; transform:translateX(-50%) scale(1); }
+  50%    { opacity:0.5; transform:translateX(-50%) scale(1.2); }
+}
+
+.header-inner h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.tagline {
+  font-style: italic;
+  color: #eee;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Fallback für Nav auf Mobile */
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+}

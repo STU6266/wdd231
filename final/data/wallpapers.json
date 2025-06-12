@@ -1,42 +1,42 @@
 [
   {
     "filename": "Pegasus",
-    "path": "images/bleich.png"
+    "path": "images/bleich.webp"
   },
   {
     "filename": "Unicorn",
-    "path": "images/christmas.png"
+    "path": "images/christmas.webp"
   },
   {
     "filename": "Lions",
-    "path": "images/crazy.png"
+    "path": "images/crazy.webp"
   },
   {
     "filename": "Blue Dragon",
-    "path": "images/dragon.png"
+    "path": "images/dragon.webp"
   },
   {
     "filename": "Feather",
-    "path": "images/feder.png"
+    "path": "images/feder.webp"
   },
   {
     "filename":"Phoenix",
-    "path": "images/phönix.png"
+    "path": "images/phönix.webp"
   },
   {
     "filename":"BLue Flower",
-    "path": "images/PurpleRoseEye.png"
+    "path": "images/PurpleRoseEye.webp"
   },
   {
     "filename": "Blue Universe",
-    "path": "images/unicorn.png"
+    "path": "images/unicorn.webp"
   },
   {
     "filename": "Universe",
-    "path": "images/universe.png"
+    "path": "images/universe.webp"
   },
   {
     "filename": "Water Dragon",
-    "path": "images/waterDragon.png"
+    "path": "images/waterDragon.webp"
   }
 ]
