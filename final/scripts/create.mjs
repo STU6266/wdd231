@@ -16,7 +16,7 @@
   });
 
   document.getElementById('preview-btn')
-    .addEventListener('click', ()=>{/* Vorschau wie gehabt */});
+    .addEventListener('click', ()=>{});
   document.getElementById('create-form')
-    .addEventListener('submit', e=>{/* Modal + localStorage wie gehabt */});
+    .addEventListener('submit', e=>{});
 })();

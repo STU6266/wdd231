@@ -163,7 +163,6 @@ nav a.active {
   color: #1e1e2f;
 }
 
-/* === HERO-QUOTE-BEREICH === */
 #quote-section {
   position: relative;
   width: 100vw;
@@ -183,7 +182,7 @@ nav a.active {
 }
 
 #random-image {
-  display: none; /* Bild wird als Hintergrund gesetzt */
+  display: none;
 }
 #quote-text {
   font-size: 2rem;
@@ -476,7 +475,7 @@ body.dark .fantasy-header {
   width: 320px;
   text-align: center;
 }
-.modal[role="dialog"] { /* ARIA */
+.modal[role="dialog"] {
   outline: none;
 }
 body.dark .modal {
@@ -517,36 +516,33 @@ body.dark .modal-content button:hover {
   background-image: url('images/crazy.webp');
 }
 
- 
- 
+.fantasy-header {
+  background: linear-gradient(135deg,#1e1e2f,#3e2d5c);
+  position: relative; overflow: hidden;
+  border-bottom:2px solid #d4af37;
+}
+.main-nav ul {
+  display:flex; justify-content:center;
+}
 
-    .fantasy-header {
-      background: linear-gradient(135deg,#1e1e2f,#3e2d5c);
-      position: relative; overflow: hidden;
-      border-bottom:2px solid #d4af37;
-    }
-    .main-nav ul {
-      display:flex; justify-content:center;
-    }
-
-    #quote-section {
-      width:100vw; height:100vh;
-      background-image:url('images/wallpaper1.webp');
-      background-size:cover; background-position:center;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; padding:0; margin:0;
-    }
-    #quote-text, #quote-author {
-      background:rgba(0,0,0,0.6);
-      display:inline-block; border-radius:8px;
-      padding:0.5rem 1rem; color:#fff;
-    }
-    #new-quote-btn {
-      position:absolute; top:20px; right:20px;
-      background:#2e2e40; color:#d4af37;
-      border:1px solid #d4af37; padding:0.5rem 1rem;
-      border-radius:6px; cursor:pointer;
-    }
+#quote-section {
+  width:100vw; height:100vh;
+  background-image:url('images/wallpaper1.webp');
+  background-size:cover; background-position:center;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:0; margin:0;
+}
+#quote-text, #quote-author {
+  background:rgba(0,0,0,0.6);
+  display:inline-block; border-radius:8px;
+  padding:0.5rem 1rem; color:#fff;
+}
+#new-quote-btn {
+  position:absolute; top:20px; right:20px;
+  background:#2e2e40; color:#d4af37;
+  border:1px solid #d4af37; padding:0.5rem 1rem;
+  border-radius:6px; cursor:pointer;
+}
  
 .site-footer {
   min-height: 4rem;
@@ -560,15 +556,11 @@ body.dark .modal-content button:hover {
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto&display=swap');
 
-/* ————————— Critical Styles ————————— */
-
-/* Reset Margins/Paddings */
 html, body {
   margin: 0;
   padding: 0;
 }
 
-/* Header & Navigation */
 .fantasy-header {
   background: linear-gradient(135deg, #1e1e2f, #3e2d5c);
   position: relative;
@@ -593,7 +585,6 @@ html, body {
   font-family: 'Cinzel Decorative', cursive;
 }
 
-/* Hero-Section */
 #quote-section {
   width: 100vw;
   height: 100vh;
@@ -627,7 +618,6 @@ html, body {
   cursor: pointer;
 }
 
-/* Footer: Platz reservieren, um CLS zu vermeiden */
 .site-footer {
   min-height: 4rem;
   background: #1e1e2f;
@@ -636,8 +626,6 @@ html, body {
   padding: 1rem 0;
   font-family: 'Roboto', sans-serif;
 }
-
-/* ———————— Restliche Styles ———————— */
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -689,7 +677,6 @@ main {
   padding: 0 1rem;
 }
 
-/* Fallback für Nav auf Mobile */
 @media (max-width: 600px) {
   .main-nav ul {
     flex-direction: column;
