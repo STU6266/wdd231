@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Fanta Quotinator – Generator for Fantasy quotes</title>
-  <meta name="description" content="A fun way to kill some time and to learn some new quotes from your favorite fantasy movies and books.">
-  <meta name="keywords" content="fantasy, quotes, generator, fun, inspiration, movies, books">
+  <title>Fanta Quotinator – Quotes by Users</title>
+  <meta name="description" content="User-created fantasy quotes and wallpapers gallery.">
   <meta name="author" content="Steven Kemendics">
 
-  <meta property="og:title" content="Fanta Quotinator – Generator for Fantasy quotes">
-  <meta property="og:description" content="A fun way to kill some time and to learn some new quotes from your favorite fantasy movies and books.">
+  <meta property="og:title" content="Fanta Quotinator – Quotes by Users">
+  <meta property="og:description" content="User-created fantasy quotes and wallpapers gallery.">
   <meta property="og:image" content="https://stu6266.github.io/wdd231/finalproject/images/?.webp">
-  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/index.html">
+  <meta property="og:url" content="https://stu6266.github.io/wdd231/finalproject/userCreated.html">
   <meta property="og:site_name" content="Fanta Quotinator">
   <meta property="og:type" content="website">
 
@@ -31,26 +30,23 @@
     </div>
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="create.html">Wallpaper Maker</a></li>
-        <li><a href="usercreate.html">Quotes by Users</a></li>
+        <li><a href="usercreate.html" aria-current="page">Quotes by Users</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="quote-section" role="region" aria-labelledby="quote-text">
-    <blockquote id="quote-text" aria-live="polite">Loading quote...</blockquote>
-    <p id="quote-author" aria-live="polite"></p>
-    <button id="new-quote-btn" aria-label="Generate new quote">🪄 New Quote</button>
-  </section>
-
-  <main role="main"></main>
+  <main class="form-container" role="main">
+    <h2 id="user-quote-title">User Created Quotes</h2>
+    <div id="result" role="region" aria-labelledby="user-quote-title"></div>
+  </main>
 
   <footer class="site-footer" role="contentinfo">
     <p>© <span id="currentYear"></span> Steven Kemendics – WDD 231</p>
     <p id="lastModified">Last Modified: ...</p>
   </footer>
   <script type="module" src="scripts/generator.js"></script>
-  <script src="scripts/index.mjs" defer></script>
+  <script src="scripts/userCreated.mjs" defer></script>
 </body>
 </html>
