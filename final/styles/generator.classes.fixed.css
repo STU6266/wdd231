@@ -1,0 +1,21 @@
+/* Placeholder for original content */
+
+/* Ergänzte Klassen für vollständige Semantik */
+
+.site-header {
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

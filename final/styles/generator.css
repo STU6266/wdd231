@@ -471,7 +471,7 @@ body.dark .modal-content button:hover {
 
 #quote-section {
     align-items:center;
-    background-image:url('images/wallpaper1.webp');
+    background-image:url('images/crazy.webp');
     background-position:center;
     background-size:cover;
     display:flex;height:100vh;
@@ -625,4 +625,22 @@ main {margin: 2rem auto;
 
 @media (max-width: 600px) {.main-nav ul {
     flex-direction: column;}
+}
+
+.site-header {
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
